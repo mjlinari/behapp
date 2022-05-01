@@ -1,8 +1,13 @@
-
+import Navbar from "./components/navbar";
+import Sidebar from "./components/sidebar";
 
 function App() {
   return (
-    <h1>Hola</h1>
+    <>
+    Roboto
+      <Navbar />
+      <Sidebar />
+    </>
   );
 }
 
