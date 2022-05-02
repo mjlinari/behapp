@@ -6,31 +6,30 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-const Sidebar = () => {
-  const menuList = [
-    {
-      text: "Pacientes",
-      icon: <EmojiEmotionsIcon></EmojiEmotionsIcon>,
-      path: "/",
-    },
-    {
-      text: "Historias clinicas",
-      icon: <DescriptionIcon></DescriptionIcon>,
-      path: "/",
-    },
-  ];
+const menuList = [
+  {
+    text: "Pacientes",
+    icon: <EmojiEmotionsIcon></EmojiEmotionsIcon>,
+    path: "/",
+  },
+  {
+    text: "Historias clinicas",
+    icon: <DescriptionIcon></DescriptionIcon>,
+    path: "/",
+  },
+];
 
+const Sidebar = () => {
   return (
     <Drawer>
       <List>
         {menuList.map((item) => {
-          {
-            console.log(menuList);
-          }
-          <ListItem key={item.text}>
-            <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText>{item.text}</ListItemText>
-          </ListItem>;
+          return (
+            <ListItem key={item.text}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText>{item.text}</ListItemText>
+            </ListItem>
+          );
         })}
       </List>
     </Drawer>
