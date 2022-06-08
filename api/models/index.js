@@ -5,17 +5,6 @@ const Profession = require("./profession");
 
 //Relations
 
-User.hasOne(Profession, { as: "Profession", foreignKey: "userId" });
-User.belongsToMany(Patient, {
-  through: "patientsOf",
-  foreignKey: "userId",
-  otherKey: "patientsId",
-});
-Patient.belongsToMany(User, {
-  through: "terapistOf",
-  foreignKey: "patinetId",
-  otherKey: "usersId",
-});
 
 
 

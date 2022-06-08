@@ -1,4 +1,4 @@
-const { User, Profession, Patient } = require("../models");
+const { User } = require("../models");
 
 class UserController {
   static async getAllUsers(req, res) {
@@ -26,47 +26,7 @@ class UserController {
     } catch (err) {
       console.log("ERROR", err);
     }
-  }
-  
-  /* static async setUsersProfession(req, res) {
-    try{
-        const profession = await Profession.findByPk(req.body)
-        const user = await User.findByPk(req.params.id)
-        console.log("profession" , profession)
-        res.sendStatus(200)
-
-    }catch(err){
-        console.log("ERROR", err)
-    }
-} */
-
-  static async deleteUser(req, res) {
-    try {
-      await User.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-
-      res.sendStatus(200);
-    } catch (err) {
-      console.log("ERROR", err);
-    }
-  }
-
-  static async updateUser(req, res) {
-    try {
-      await User.update(req.body, {
-        where: {
-          id: req.params.id,
-        },
-        returning: true,
-      });
-      res.sendStatus(204);
-    } catch (err) {
-      console.log("ERROR", err);
-    }
-  }
+  } 
 }
 
 module.exports = UserController;

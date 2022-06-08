@@ -5,10 +5,6 @@ class ClinicalHistory extends Model {}
 
 ClinicalHistory.init(
   {
-    date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     content: {
       type: DataTypes.TEXT,
       allowNull: false,

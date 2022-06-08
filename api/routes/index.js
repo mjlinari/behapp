@@ -9,7 +9,7 @@ const professionsRoutes = require("./professionsRoutes")
 router.use("/users", usersRoutes);
 router.use("/admin", adminRoutes);
 router.use("/patients", patientsRoutes);
-router.use("/clicalHistories", clinicalHistoriesRoutes);
+router.use("/clinicalHistories", clinicalHistoriesRoutes);
 router.use("/professions", professionsRoutes)
 
 module.exports = router;
