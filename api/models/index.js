@@ -5,7 +5,7 @@ const Profession = require("./profession");
 
 //Relations
 
-
+User.hasOne(Profession)
 
 
 

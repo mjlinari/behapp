@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { ClinicalHistoryController } = require("../controllers");
 
-router.use("/getAll", ClinicalHistoryController.getAllClinicalHistories);
-router.use("/createClinicalHistory",  ClinicalHistoryController.createClinicalHistory);
-router.use("/:id", ClinicalHistoryController.getById)
+router.get("/getAll", ClinicalHistoryController.getAllClinicalHistories);
+router.post("/createClinicalHistory",  ClinicalHistoryController.createClinicalHistory);
+router.get("/:id", ClinicalHistoryController.getById)
 
 module.exports = router;

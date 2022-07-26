@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Profession } = require("../models");
 
 class UserController {
   static async getAllUsers(req, res) {
@@ -40,6 +40,19 @@ class UserController {
     try {
       await req.logOut();
       res.sendStatus(200);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  static async setProfession(req, res) {
+    try {
+      const user = await User.findByPk(req.params.userId);
+      const profession = await Profession.findByPk(req.params.userId);
+
+      await user.setProfession(profession);
+
+      res.status(200).send(profession)
     } catch (err) {
       console.log(err);
     }

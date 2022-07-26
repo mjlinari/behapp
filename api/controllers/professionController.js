@@ -1,4 +1,4 @@
-const { Profession } = require("../models");
+const { Profession, User } = require("../models");
 
 class ProfessionController {
   static async getAllProfessions(req, res) {
@@ -27,6 +27,8 @@ class ProfessionController {
       console.log("ERROR", err);
     }
   }
+
+  
 }
 
 module.exports = ProfessionController;
